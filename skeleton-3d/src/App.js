@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import './App.css';
 
+// import background from './components/backround';
 import Model from "./components/Male";
 import {Canvas} from "@react-three/fiber";
 import { OrbitControls } from '@react-three/drei';
@@ -9,16 +10,28 @@ import { OrbitControls } from '@react-three/drei';
 
 function App() {
   return (
-    <wrapper className="App">
+    <div className="App">
+    <div className="wrapper">
+        <div className="card">
+            <div className="product-canvas">
       <Canvas>
-        <OrbitControls enableZoom={false}/>
-        <ambientLight intensity={0.5}/>
+      <Suspense fallback={null}>
+      <ambientLight intensity={0.9} angle = {0.1} penumbra = {1}/>
+        <OrbitControls 
+          enablePan={true}
+          enableZoom={true}
+          enableRotate={true}/>
         <directionalLight position={[-2, 5, 2]} intensity ={1}/>
-        <Suspense fallback={null}>
-          <Model/>
+        
+        
+        {/* <background/> */}
+          <Model />
         </Suspense>
       </Canvas>
-    </wrapper>
+                </div>
+            </div>
+        </div>
+    </div>
   );
 }
 

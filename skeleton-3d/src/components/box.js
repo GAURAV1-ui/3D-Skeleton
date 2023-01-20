@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { } from "react";
 
-const box = () => {
-  return (
-    <div>box</div>
-  )
-}
 
-export default box
+const Box = (props) => {
+    return (
+        <div>
+
+        </div>
+      );
+    }
+export default Box;
+    
