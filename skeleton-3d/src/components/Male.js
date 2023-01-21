@@ -14,7 +14,7 @@ function Model(...props) {
   const group = useRef()
   const { nodes, materials } = useGLTF('/male.gltf')
   return (
-    <group ref ={group} {...props} dispose={null} scale = {0.1}>
+    <group ref ={group} {...props} dispose={null} scale = {0.8}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Object_3.geometry} material={materials.defaultMat_12} />
         <mesh geometry={nodes.Object_5.geometry} material={materials.defaultMat_11} />
