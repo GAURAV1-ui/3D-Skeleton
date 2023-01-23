@@ -1,25 +1,35 @@
-import React, { Suspense, useState} from 'react';
-import {Canvas,useThree} from "@react-three/fiber";
-import { OrbitControls } from '@react-three/drei';
+import React, { Suspense} from 'react';
+import {Canvas} from "@react-three/fiber";
+
+import { OrbitControls,useThree } from '@react-three/drei';
 import './App.css';
 // import Button from './components/Button';
 // import background from './components/backround';
 import Model from "./components/Male";
 
 
-function Foo() {
-  const { camera } = useThree();
-}
+// function Foo() {
+//   const { camera } = useThree();
+// }
 
 function App() {
-  // const camera = useThree((state) => state.camera);
-  <Foo camera/>
-  const [rotate, setRotate] = useState([0, 0, 100]);
-  const frontHandler= () =>{
+  // const { camera } = useThree();
+  // const [rotate,setRotate] = useState([0,0,100])
+  // let camera = new THREE.PerspectiveCamera (90, 1, 1, 100);
+  // let [x, y, z] = [10, 10, 10];
+// camera.position.set(x, y, z);
+  // const [rotate, setRotate] = useState([0, 0, 100]);
+//   useEffect = () =>{
+//     const frontHandler= () =>{
+//       console.log("");
+//       setRotate(
+//       (camera.position.set([10, 10, 10])
+//       ));
+//   }
+// }
   
-    setRotate(camera.position.set([10, 10, 10]));
 
-  }
+ 
 
  
   return (
@@ -27,7 +37,7 @@ function App() {
     <div className="wrapper">
         <div className="card">
             <div className="product-canvas">
-      <Canvas camera={{ fov: 45, position: rotate}}>
+      <Canvas camera={{fov: 75,position:[0,0,100]}}>
         
       <Suspense fallback={null}>
       <ambientLight intensity={0.9} angle = {0.1} penumbra = {1}/>
@@ -46,7 +56,7 @@ function App() {
           
         </Suspense>
       </Canvas>
-      <button onClick={frontHandler}>Front</button>
+      {/* <button onClick={frontHandler}>Front</button> */}
       {/* <button>Back</button>
       <button>right</button>
       <button>left</button> */}
